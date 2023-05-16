@@ -1,5 +1,6 @@
 from Crypto.Hash import SHA256
 import hashlib
+import random
 
 def parta(input):
     hashed = hashlib.sha256(str(input).encode()).digest()
@@ -15,20 +16,21 @@ def partb(input1, input2):
 print("------------------")
 partb("cat", "bat")
 print("------------------")
-partb("dog", "dof")
+partb("dog", "dog")
 print("------------------")
 partb("moon", "moom")
 
+# can randomly generate input to put in the hash and compare the hash to each other in bits
 def partc():
-    m0 = "bbbbbbbb"
-    m1 = "bbbbbbbc"
+    m0 = random.getrandbits(16)
+    m1 = random.getrandbits(16)
+    
 
-    m0_hashed = parta(m0)[:16]
+    m0_hashed = parta(m0)[:16] 
     m1_hashed = parta(m1)[:16]
     while(m0_hashed != m1_hashed):
-        m1_bytes = b"".join([bytes(m1, "utf-8"), bytes(1)])
-        m1 = str(m1_bytes)
-        m1_hashed = parta(str(m1_bytes))[:16]
+        m1 = random.getrandbits(16)
+        m1_hashed = parta(m1)[:16]
     
     print("m0: ")
     print(m0)
