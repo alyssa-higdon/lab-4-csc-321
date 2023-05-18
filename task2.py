@@ -28,6 +28,7 @@ def bCrypt(line):
         i +=1
     i +=1
     j = 0
+    salt += "$" + algorithm + "$" + workfactor
     while(j < 22):
         salt += line[i + j]
         j +=1
