@@ -1,5 +1,6 @@
 import nltk
 nltk.download()
+
 from nltk.corpus import words
 words.words()
 import bcrypt
@@ -68,8 +69,6 @@ def bCrypt(line):
 #  Given: salt, hashed, hashing algorithm
 # Do:
 # Go through each world in corpus and hash it with salt and see if the resulting hash matches the given hashed 
-
-
 
     print(nltk.corpus.abc.words())
 
