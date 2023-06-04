@@ -1,17 +1,12 @@
 import nltk
 nltk.download()
-
 from nltk.corpus import words
 words.words()
 import bcrypt
 import time
 import base64
-
-
-
 # Given: salt, hashed, hashing algorithm
-# Do:
-# Go through each world in corpus and hash it with salt and see if the resulting
+# Do: go through each world in corpus and hash it with salt and see if the resulting
 # hash matches the given hashed
 def bCrypt(line):
     user = ""
@@ -34,7 +29,6 @@ def bCrypt(line):
         salt += line[i + j]
         j +=1
     hash = line[i + j:]
-    
     print(user)
     print(algorithm)
     print(workfactor)
@@ -67,9 +61,7 @@ def bCrypt(line):
     return False
     
 #  Given: salt, hashed, hashing algorithm
-# Do:
-# Go through each world in corpus and hash it with salt and see if the resulting hash matches the given hashed 
-
+# Do: go through each world in corpus and hash it with salt and see if the resulting hash matches the given hashed 
     print(nltk.corpus.abc.words())
 
 bCrypt("Bilbo:$2b$08$L.z8uq99JkFAvX/Q1jGRI.TzrHIIxWMoRi/VzO1sj/UvVFPgW8dW.")
